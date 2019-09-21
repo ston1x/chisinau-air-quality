@@ -1,5 +1,32 @@
 <h2>Chisinau Air Quality</h2>
+<h3>Submit a report</h3>
+<%=
+form_for :report, routes.create_report_path do
+  label 'Air quality'
+    div class: 'form-field' do
+      radio_button :status, true, class: "form-check"
+      label 'Stinky'
+      radio_button :status, false, class: "form-check"
+      label 'Good'
+    end
 
+    div class: 'form-field' do
+      neighbourhoods = {
+        'Centru' => 'centru',
+        'Botanica' => 'botanica',
+        'Râșcani' => 'rascani',
+        'Buiucani' => 'buiucani',
+        'Ciocana' => 'ciocana'
+      }
+
+      label 'Neighbourhood'
+      select :location, neighbourhoods
+    end
+    submit 'Submit report', class: 'btn btn-primary'
+  end
+%>
+
+<h3>Reports</h3>
 <% if reports.any? %>
   <div id="reports">
   <% reports.each do |report| %>
