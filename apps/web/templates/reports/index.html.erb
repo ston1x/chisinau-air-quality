@@ -1,13 +1,13 @@
 <h2>Chisinau Air Quality</h2>
 <h3>Submit a report</h3>
 <%=
-form_for :report, routes.create_report_path do
+  form_for :report, routes.create_report_path, values: {report: {status: true}} do
   label 'Air quality'
     div class: 'form-field' do
       radio_button :status, true, class: "form-check"
-      label 'Stinky'
+      label 'stinky'
       radio_button :status, false, class: "form-check"
-      label 'Good'
+      label 'good'
     end
 
     div class: 'form-field' do

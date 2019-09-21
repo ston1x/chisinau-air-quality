@@ -11,6 +11,7 @@ module Web
               stinky: params[:report][:status],
               location: params[:report][:location]
             )
+            redirect_to routes.root_path
           end
         end
       end

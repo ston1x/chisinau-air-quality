@@ -3,5 +3,5 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-get '/', to: 'reports#index'
+root to: 'reports#index'
 post '/reports', to: 'reports#create', as: 'create_report'
