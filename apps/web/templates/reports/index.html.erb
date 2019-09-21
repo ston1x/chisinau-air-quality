@@ -1,0 +1,15 @@
+<h2>Chisinau Air Quality</h2>
+
+<% if reports.any? %>
+  <div id="reports">
+  <% reports.each do |report| %>
+    <div class="report">
+      <p>
+      <%= report.created_at %>,
+      <%= report.location %>,
+      stinky: <%= report.stinky %>
+      </p>
+    </div>
+  <% end %>
+  </div>
+<% end %>
