@@ -1,0 +1,3 @@
+project=chisinau_air
+test=rspec
+template=erb
