@@ -6,7 +6,8 @@ module Api::Views::Reports
     layout false
 
     def render
-      _raw JSON.dump(speakers.map{ |speaker| speaker.to_h })
+      binding.pry
+      report.to_json
     end
   end
 end

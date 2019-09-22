@@ -4,6 +4,8 @@ require 'hanami/assets'
 module Api
   class Application < Hanami::Application
     configure do
+      default_request_format  :json
+      default_response_format :json
       ##
       # BASIC
       #
