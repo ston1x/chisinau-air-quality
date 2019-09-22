@@ -14,15 +14,17 @@ h3 Submit a report
     - submit 'Submit report', class: 'btn btn-primary'
 h3 Reports
 - if reports.any?
-  #reports
+  table class="reports" style="width: 100%" border="1"
+    tr align="left"
+      th Reported at
+      th Neighbourhood
+      th Status
+
     - reports.each do |report|
-      .report
-        p
-          = report&.created_at&.getlocal('+03:00')&.to_s(:db)
-          ' ,
-          = neighbourhoods.key(report.location)
-          ',
-          - if report.stinky
-            | stinky 💩
-          - else
-            | fresh air 🍃
+      tr
+        td.created_at = report&.created_at&.getlocal('+03:00')&.to_s(:db)
+        td.neighbourhood = neighbourhoods.key(report.location)
+        - if report.stinky
+          td.status = "stinky 💩"
+        - else
+          td.status = "fresh air 🍃"
