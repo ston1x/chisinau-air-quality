@@ -7,7 +7,7 @@ module Web
         expose :reports, :neighbourhoods
 
         def call(params)
-          @reports = Report.all
+          @reports = Report.all.desc('created_at').limit(20)
 
           @neighbourhoods = {
             'Centru' => 'centru',

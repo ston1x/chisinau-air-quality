@@ -22,7 +22,7 @@
 <h3>Reports</h3>
 <% if reports.any? %>
   <div id="reports">
-  <% reports.reverse.each do |report| %>
+  <% reports.each do |report| %>
     <div class="report">
       <p>
       <%= report&.created_at&.getlocal('+03:00')&.to_s(:db) %>,
