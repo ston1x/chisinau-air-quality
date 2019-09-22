@@ -6,13 +6,12 @@ module Web
 
         def call(params)
           if (Time.now - Report.last.created_at).to_i > 5 # stupid temporary attack resistance
-            # stinky = params[:report][:status] == 'true' ? true : false
             Report.create(
               stinky: params[:report][:status],
               location: params[:report][:location]
             )
-            redirect_to routes.root_path
           end
+          redirect_to routes.root_path
         end
       end
     end
