@@ -4,6 +4,7 @@ gem 'hanami', '~> 1.3'
 gem 'mongoid'
 gem 'pry'
 gem 'rake'
+gem 'slim'
 gem 'sqlite3'
 
 group :development do

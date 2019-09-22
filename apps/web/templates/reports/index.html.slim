@@ -1,0 +1,28 @@
+h2 Chisinau Air Quality
+h3 Submit a report
+
+= form_for :report, routes.create_report_path, values: {report: {status: true}} do
+    - label 'Air quality'
+    - div class: 'form-field'
+      - radio_button :status, true, class: "form-check"
+      - label 'stinky'
+      - radio_button :status, false, class: "form-check"
+      - label 'good'
+    - div class: 'form-field'
+      - label 'Neighbourhood'
+      - select :location, neighbourhoods
+    - submit 'Submit report', class: 'btn btn-primary'
+h3 Reports
+- if reports.any?
+  #reports
+    - reports.each do |report|
+      .report
+        p
+          = report&.created_at&.getlocal('+03:00')&.to_s(:db)
+          ' ,
+          = neighbourhoods.key(report.location)
+          ',
+          - if report.stinky
+            | stinky 💩
+          - else
+            | fresh air 🍃
