@@ -1,6 +1,7 @@
 # Chisinau Air
 
-Welcome to your new Hanami project!
+## Description
+We are all suffering from sudden smell attacks all over the city. This project is aimed to collect honest statistics on the city air quality.
 
 ## Setup
 
