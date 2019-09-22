@@ -29,12 +29,16 @@
 <h3>Reports</h3>
 <% if reports.any? %>
   <div id="reports">
-  <% reports.each do |report| %>
+  <% reports.reverse.each do |report| %>
     <div class="report">
       <p>
       <%= report.created_at %>,
       <%= report.location %>,
-      stinky: <%= report.stinky %>
+      <% if report.stinky %>
+        stinky 💩
+      <% else %>
+        fresh air 🍃
+      <% end %>
       </p>
     </div>
   <% end %>
