@@ -12,7 +12,7 @@ module Web
             )
             redirect_to routes.thank_you_path
           else
-          redirect_to routes.root_path
+            redirect_to routes.root_path
           end
         end
       end
