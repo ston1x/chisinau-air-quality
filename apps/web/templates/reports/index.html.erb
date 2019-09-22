@@ -11,13 +11,6 @@
     end
 
     div class: 'form-field' do
-      neighbourhoods = {
-        'Centru' => 'centru',
-        'Botanica' => 'botanica',
-        'Râșcani' => 'rascani',
-        'Buiucani' => 'buiucani',
-        'Ciocana' => 'ciocana'
-      }
 
       label 'Neighbourhood'
       select :location, neighbourhoods
@@ -32,8 +25,8 @@
   <% reports.reverse.each do |report| %>
     <div class="report">
       <p>
-      <%= report.created_at %>,
-      <%= report.location %>,
+      <%= report&.created_at&.getlocal('+03:00')&.to_s(:db) %>,
+      <%= neighbourhoods.key(report.location) %>,
       <% if report.stinky %>
         stinky 💩
       <% else %>

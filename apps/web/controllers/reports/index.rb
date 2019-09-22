@@ -4,10 +4,18 @@ module Web
       class Index
         include Web::Action
 
-        expose :reports
+        expose :reports, :neighbourhoods
 
         def call(params)
           @reports = Report.all
+
+          @neighbourhoods = {
+            'Centru' => 'centru',
+            'Botanica' => 'botanica',
+            'Râșcani' => 'rascani',
+            'Buiucani' => 'buiucani',
+            'Ciocana' => 'ciocana'
+          }
         end
       end
     end
