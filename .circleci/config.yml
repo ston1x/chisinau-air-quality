@@ -10,8 +10,6 @@ jobs:
     steps:
       - checkout
 
-      - run: bundle exec rubocop
-
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
@@ -26,3 +24,5 @@ jobs:
         key: chisinau_air-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
+
+      - run: bundle exec rubocop
