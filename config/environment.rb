@@ -1,17 +1,5 @@
-require 'bundler/setup'
-require 'hanami/setup'
-require_relative '../apps/web/application'
-require_relative '../lib/mongo'
+# Load the Rails application.
+require_relative 'application'
 
-Hanami.configure do
-  mount Web::Application, at: '/'
-
-  environment :development do
-    # See: https://guides.hanamirb.org/projects/logging
-    logger level: :debug
-  end
-
-  environment :production do
-    logger level: :info, formatter: :json, filter: []
-  end
-end
+# Initialize the Rails application.
+Rails.application.initialize!

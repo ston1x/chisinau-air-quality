@@ -1,34 +1,24 @@
-# Chisinau Air
+# README
 
-## Description
-We are all suffering from sudden smell attacks all over the city. This project is aimed to collect honest statistics on the city air quality.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Setup
+Things you may want to cover:
 
-How to run tests:
+* Ruby version
 
-```
-% bundle exec rake
-```
+* System dependencies
 
-How to run the development console:
+* Configuration
 
-```
-% bundle exec hanami console
-```
+* Database creation
 
-How to run the development server:
+* Database initialization
 
-```
-% bundle exec hanami server
-```
+* How to run the test suite
 
-How to prepare (create and migrate) DB for `development` and `test` environments:
+* Services (job queues, cache servers, search engines, etc.)
 
-```
-% bundle exec hanami db prepare
+* Deployment instructions
 
-% HANAMI_ENV=test bundle exec hanami db prepare
-```
-
-Explore Hanami [guides](https://guides.hanamirb.org/), [API docs](http://docs.hanamirb.org/1.3.3/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+* ...
