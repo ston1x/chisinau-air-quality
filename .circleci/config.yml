@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/chisinau_air
     docker:
-      - image: circleci/ruby:2.6
+      - image: circleci/ruby:2.5.3
         environment:
           RAILS_ENV: test
       - image: mongo:3.4-xenial
