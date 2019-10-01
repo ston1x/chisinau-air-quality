@@ -1,8 +1,9 @@
 require 'bundler/setup'
 require 'hanami/setup'
+require 'pry'
 require_relative '../apps/web/application'
-require_relative '../lib/mongo'
 require_relative '../apps/api/application'
+require_relative '../lib/mongo'
 
 Hanami.configure do
   mount Api::Application, at: '/api'
