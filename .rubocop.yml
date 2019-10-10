@@ -4,6 +4,7 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'public/**/*'
+    - 'vendor/**/*'
 Metrics/LineLength:
   Enabled: true
   Max: 120
