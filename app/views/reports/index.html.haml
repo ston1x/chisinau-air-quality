@@ -1,0 +1,30 @@
+%h2 Chisinau Air Quality
+%h3 Submit a report
+
+= form_for @report do |f|
+  %p Air quality
+  = f.radio_button :stinky, true, checked: true
+  = label :status_true, 'stinky'
+  = f.radio_button :stinky, false, checked: false
+  = label :status_true, 'good'
+  %p
+  = label :neighbourhood, 'Neighbourhood'
+  = f.select :location, @neighbourhoods
+  %p
+  = f.submit "Submit", {class: "btn"}
+
+%h3 Reports
+- if @reports.any?
+  %table{:style => "width: 100%", :border => "1"}
+    %tr{:align => "left"}
+      %th Time
+      %th Location
+      %th Air status
+      - @reports.each do |report|
+        %tr
+          %td= report.created_at
+          %td= @neighbourhoods.invert[report.location]
+          - if report.stinky
+            %td stinky 💩
+          - else
+            %td good 🍃
