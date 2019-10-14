@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
   end
 
   def create
-    return if (Time.now - Report.last.created_at).to_i < 5 || Report.all.empty? # stupid temporary attack resistance
+    redirect_to root_path if Report.all.empty? || (Time.now - Report&.last&.created_at).to_i < 5 # stupid temporary attack resistance
 
     Report.create permitted_params
     redirect_to thank_you_path
