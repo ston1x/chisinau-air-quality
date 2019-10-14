@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
 
   def create
     # stupid temporary attack resistance
-    return redirect_to root_path if (Time.now - (Report&.last&.created_at || 5))&.to_i < 5
+    return redirect_to root_path if (Time.now - (Report.try(:last).try(:created_at) || 5)) < 5
 
     Report.create permitted_params
     redirect_to thank_you_path
