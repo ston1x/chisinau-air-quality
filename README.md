@@ -1,25 +1,11 @@
-# README
+# Chisinau Air Quality
 [![CircleCI](https://circleci.com/gh/ston1x/chisinau-air-quality/tree/master.svg?style=svg)](https://circleci.com/gh/ston1x/chisinau-air-quality/tree/master)
+http://stoniques.me:4567/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+We are all suffering from sudden smell attacks all over the city. This project is aimed to collect honest statistics on the city air quality.
+The project itself is a Rails API and frontend.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Things you can do:
+- Fetch latest reports
+- Submit a report
